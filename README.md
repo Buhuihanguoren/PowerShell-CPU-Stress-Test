@@ -1,12 +1,24 @@
-##   CPU Stress Test
+# CPU Stress Test
 
-### `cpu_stress_test.ps1`
-- **CPU performance testing** under load
-- **10-second intensive calculations** with real-time countdown
-- **CPU speed monitoring** before/after test
-- **System information** display
-- **Safety features** with user confirmation
+A PowerShell script that puts the CPU under load for 10 seconds with math-heavy loops and shows the CPU clock speed before and after.
 
-### Quick Usage:
+## What it does
+
+1. Reads the current CPU clock speed from WMI.
+2. Explains what the test will do and asks you to press Enter to start (or Q to quit).
+3. Runs the calculations with a colour-coded countdown (green, then yellow, then red).
+4. Reads the clock speed again and shows the results.
+
+## Run it
+
 ```powershell
 .\cpu_stress_test.ps1
+```
+
+If PowerShell refuses to run scripts:
+
+```powershell
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+```
+
+Needs Windows PowerShell 5.1 or newer. Close other heavy programs first: the computer can slow down while the test runs.
